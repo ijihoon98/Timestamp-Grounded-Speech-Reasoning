@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Listen First, Then Answer: Timestamp-Grounded Speech Reasoning">
+  <meta name="description" content="We propose a timestamp-grounded speech reasoning framework that enables language models to listen first and then answer by grounding their reasoning in temporal speech segments.">
+  <meta name="keywords" content="speech reasoning, timestamp grounding, speech understanding, chain-of-thought, audio language model, spoken language understanding">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Listen First, Then Answer: Timestamp-Grounded Speech Reasoning">
+  <meta property="og:description" content="We propose a timestamp-grounded speech reasoning framework that enables language models to listen first and then answer by grounding their reasoning in temporal speech segments.">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="Listen First, Then Answer: Timestamp-Grounded Speech Reasoning">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="Interspeech 2026">
+
+  <title>Listen First, Then Answer: Timestamp-Grounded Speech Reasoning | Interspeech 2026</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <!-- Critical CSS -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Non-critical CSS -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+</head>
+<body>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Listen First, Then Answer:<br>Timestamp-Grounded Speech Reasoning</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Anonymous Authors</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Interspeech 2026 Submission</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Paper PDF -->
+                <span class="link-block">
+                  <a href="#" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- arXiv -->
+              <span class="link-block">
+                <a href="#" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- Teaser image -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- TODO: Replace with your teaser/overview figure -->
+      <img src="static/images/fig1_teaser.pdf" alt="Overview of Timestamp-Grounded Speech Reasoning" style="width:100%;">
+      <h2 class="subtitle has-text-centered">
+        <!-- TODO: Replace with a brief description of your approach -->
+        Our framework grounds speech reasoning in temporal segments, enabling models to "listen first" before answering.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+            [Your abstract here.]
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Method -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your method description -->
+          <p>
+            [Describe your method here.]
+          </p>
+        </div>
+        <!-- TODO: Replace with your method figure -->
+        <img src="static/images/method.png" alt="Method overview" style="width:100%;">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End method -->
+
+
+<!-- Audio Demo Section -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Audio Demos</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            <!-- TODO: Replace with demo description -->
+            Below are audio examples demonstrating our timestamp-grounded speech reasoning.
+            The model identifies relevant temporal segments and grounds its reasoning in those segments before answering.
+          </p>
+        </div>
+
+        <!-- TODO: Add your audio samples -->
+        <div class="box">
+          <h4 class="title is-5">Example 1</h4>
+          <p><strong>Question:</strong> [Your question about the audio]</p>
+          <audio controls style="width:100%; margin: 10px 0;">
+            <source src="static/audios/example1.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+          <p><strong>Timestamp-Grounded Reasoning:</strong> [Model's reasoning with timestamps, e.g., "At [2.1s - 4.3s], the speaker says..."]</p>
+          <p><strong>Answer:</strong> [Final answer]</p>
+        </div>
+
+        <div class="box">
+          <h4 class="title is-5">Example 2</h4>
+          <p><strong>Question:</strong> [Your question about the audio]</p>
+          <audio controls style="width:100%; margin: 10px 0;">
+            <source src="static/audios/example2.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+          <p><strong>Timestamp-Grounded Reasoning:</strong> [Model's reasoning with timestamps]</p>
+          <p><strong>Answer:</strong> [Final answer]</p>
+        </div>
+
+        <div class="box">
+          <h4 class="title is-5">Example 3</h4>
+          <p><strong>Question:</strong> [Your question about the audio]</p>
+          <audio controls style="width:100%; margin: 10px 0;">
+            <source src="static/audios/example3.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+          <p><strong>Timestamp-Grounded Reasoning:</strong> [Model's reasoning with timestamps]</p>
+          <p><strong>Answer:</strong> [Final answer]</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End audio demos -->
+
+
+<!-- Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Experimental Results</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your results description -->
+          <p>
+            [Describe your experimental setup and key findings.]
+          </p>
+        </div>
+        <!-- TODO: Replace with your results table/figure -->
+        <img src="static/images/results.png" alt="Experimental results" style="width:100%;">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End results -->
+
+
+<!-- Image carousel for additional results -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">More Results</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- TODO: Replace with your result images -->
+        <img src="static/images/carousel1.jpg" alt="Result visualization 1" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Result visualization 1.
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/carousel2.jpg" alt="Result visualization 2" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Result visualization 2.
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/carousel3.jpg" alt="Result visualization 3" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Result visualization 3.
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <div class="bibtex-header">
+      <h2 class="title">BibTeX</h2>
+      <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+        <i class="fas fa-copy"></i>
+        <span class="copy-text">Copy</span>
+      </button>
+    </div>
+    <pre id="bibtex-code"><code>@inproceedings{anonymous2026listen,
+  title={Listen First, Then Answer: Timestamp-Grounded Speech Reasoning},
+  author={Anonymous},
+  booktitle={Proc. Interspeech 2026},
+  year={2026}
+}</code></pre>
+  </div>
+</section>
+<!--End BibTex citation -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+</body>
+</html>
