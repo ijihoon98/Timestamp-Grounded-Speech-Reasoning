@@ -3,7 +3,7 @@
 **Anonymous submission to Interspeech 2026**
 
 <p align="center">
-  <img src="static/images/fig1_teaser.pdf" width="90%">
+  <img src="static/images/fig1_teaser.png" width="90%">
 </p>
 
 > **TL;DR**: We propose a timestamp-grounded reasoning framework for Large Audio-Language Models (LALMs) that anchors each reasoning step to specific temporal segments of the input audio, improving both task accuracy and reasoning interpretability.
@@ -21,7 +21,7 @@ Large audio-language models (LALMs) can generate reasoning chains for their pred
 ## Method
 
 <p align="center">
-  <img src="static/images/fig2_main_figure.pdf" width="95%">
+  <img src="static/images/fig2_overview.png" width="95%">
 </p>
 
 Our framework consists of a **two-stage training pipeline**:
