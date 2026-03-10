@@ -3,7 +3,7 @@
 **Anonymous submission to Interspeech 2026**
 
 <p align="center">
-  <img src="static/images/fig1_teaser.png" width="50%">
+  <img src="static/images/fig1_teaser.png" width="30%">
 </p>
 
 > **TL;DR**: We propose a timestamp-grounded reasoning framework for Large Audio-Language Models (LALMs) that anchors each reasoning step to specific temporal segments of the input audio, improving both task accuracy and reasoning interpretability.
@@ -32,7 +32,6 @@ We first build a strong temporal grounding primitive by training the model on ti
 
 - Construct a timestamp-annotated speech corpus (~268k examples) using [`whisper-timestamped`](https://github.com/linto-ai/whisper-timestamped), which produces word-level timestamps via Dynamic Time Warping
 - Convert timestamped transcripts into Q&A-style grounding data, where the model learns to predict start/end timestamps for given spoken sentences
-- Datasets: LibriSpeech, CoVoST 2, MELD, multi-speaker dialogue, YouTube8M speech data
 
 ### Stage 2: Timestamp-Grounded Reasoning (GRPO)
 
@@ -41,7 +40,6 @@ We adopt Group Relative Policy Optimization (GRPO) with two complementary reward
 - **Answer Correctness Reward** (*R_answer*): Binary reward (1.0 if prediction matches ground truth, 0.0 otherwise)
 - **Timestamp Grounding Reward** (*R_tg*): Compaction score that encourages concise yet grounded reasoning — penalizes both missing grounding signals and overly verbose timestamp usage
 - **Final Reward**: *R = R_answer + R_tg*
-- Training data: ~47k examples from MELD, multi-speaker dialogue QA, and YouTube8M speech QA
 
 ---
 
@@ -109,21 +107,3 @@ Our full model achieves the best overall performance across all benchmarks, even
 | Stage 1 Data | ~268k examples |
 | Stage 2 Data | ~47k examples |
 
----
-
-## Citation
-
-```bibtex
-@inproceedings{anonymous2026listen,
-  title={Listen First, Then Answer: Timestamp-Grounded Speech Reasoning},
-  author={Anonymous},
-  booktitle={Proc. Interspeech 2026},
-  year={2026}
-}
-```
-
----
-
-## Acknowledgements
-
-This page was built using the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template).
