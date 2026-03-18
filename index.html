@@ -77,29 +77,6 @@
             </div>
 
             <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- Paper PDF -->
-                <span class="link-block">
-                  <a href="#" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-
-              <!-- arXiv -->
-              <span class="link-block">
-                <a href="#" target="_blank"
-                class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                  <i class="ai ai-arxiv"></i>
-                </span>
-                <span>arXiv</span>
-              </a>
-            </span>
-          </div>
         </div>
       </div>
     </div>
@@ -146,31 +123,13 @@ Additionally, grounding amplifies desirable reasoning behaviors, such as region 
 
 <!-- Method -->
 <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-3 has-text-centered">Method</h2>
+    <img src="static/images/fig2_overview.png" alt="Method overview" style="width:100%; margin-bottom: 2rem;">
+    <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Method</h2>
-        <img src="static/images/fig2_overview.png" alt="Method overview" style="width:100%; margin-bottom: 1.5rem;">
         <div class="content has-text-justified">
-          <p>
-            Our framework consists of a <strong>two-stage training pipeline</strong>:
-          </p>
-          <h4 class="title is-5" style="text-align:left;">Stage 1: Supervised Timestamp Alignment (STA)</h4>
-          <p>
-            We first build a strong temporal grounding primitive by training the model on timestamp prediction tasks.
-            We construct a timestamp-annotated speech corpus (~268k examples) using <a href="https://github.com/linto-ai/whisper-timestamped" target="_blank">whisper-timestamped</a>,
-            which produces word-level timestamps via Dynamic Time Warping.
-            Timestamped transcripts are converted into Q&amp;A-style grounding data, where the model learns to predict start/end timestamps for given spoken sentences.
-          </p>
-          <h4 class="title is-5" style="text-align:left;">Stage 2: Timestamp-Grounded Reasoning (GRPO)</h4>
-          <p>
-            We adopt Group Relative Policy Optimization (GRPO) with two complementary rewards:
-          </p>
-          <ul style="text-align:left;">
-            <li><strong>Answer Correctness Reward (<em>R</em><sub>answer</sub>)</strong>: Binary reward (1.0 if prediction matches ground truth, 0.0 otherwise)</li>
-            <li><strong>Timestamp Grounding Reward (<em>R</em><sub>tg</sub>)</strong>: Compaction score that encourages concise yet grounded reasoning — penalizes both missing grounding signals and overly verbose timestamp usage</li>
-            <li><strong>Final Reward</strong>: <em>R = R</em><sub>answer</sub> + <em>R</em><sub>tg</sub></li>
-          </ul>
+          <p>Our framework consists of a <strong>two-stage training pipeline</strong>. In <strong>Stage 1 (STA)</strong>, we train the model on timestamp prediction tasks using ~268k annotated examples, building a temporal grounding foundation. In <strong>Stage 2 (GRPO)</strong>, we apply reinforcement learning with two rewards: an <em>answer correctness reward</em> and a <em>timestamp grounding reward</em> (<em>R</em><sub>tg</sub>) that encourages concise, grounded reasoning. The final reward is <em>R = R</em><sub>answer</sub> + <em>R</em><sub>tg</sub>.</p>
         </div>
       </div>
     </div>
@@ -243,7 +202,7 @@ Additionally, grounding amplifies desirable reasoning behaviors, such as region 
           <h4 class="title is-5" style="text-align:left;">1. Current LALMs Don't Truly Listen</h4>
           <p>
             We conduct a semantic-based attention analysis and find that baseline LALMs allocate only a small fraction of attention to audio tokens.
-            System tokens dominate attention allocation, receiving <strong>15&times; more attention</strong> than audio tokens on a per-token basis — even when producing correct answers.
+            System tokens dominate attention allocation, receiving <strong>15&times; more attention</strong> than audio tokens on a per-token basis, even when producing correct answers.
           </p>
           <h4 class="title is-5" style="text-align:left;">2. Grounding Is Listening</h4>
           <p>
