@@ -751,9 +751,6 @@ a:focus {
 
 /* ── Audio Demo Section ── */
 .demo-content {
-  display: none;
-}
-.demo-content.is-active {
   display: block;
 }
 
