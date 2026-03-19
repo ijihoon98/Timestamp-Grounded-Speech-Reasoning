@@ -142,51 +142,164 @@ Additionally, grounding amplifies desirable reasoning behaviors, such as region 
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Audio Demos</h2>
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <div class="content has-text-justified">
-          <p>
-            <!-- TODO: Replace with demo description -->
-            Below are audio examples demonstrating our timestamp-grounded speech reasoning.
-            The model identifies relevant temporal segments and grounds its reasoning in those segments before answering.
-          </p>
-        </div>
+    <p class="has-text-centered" style="color:#666; margin-bottom:2rem;">
+      One example per reasoning sub-category. The model identifies the relevant timestamp before answering.
+    </p>
 
-        <!-- TODO: Add your audio samples -->
-        <div class="box">
-          <h4 class="title is-5">Example 1</h4>
-          <p><strong>Question:</strong> [Your question about the audio]</p>
-          <audio controls style="width:100%; margin: 10px 0;">
-            <source src="static/audios/example1.wav" type="audio/wav">
-            Your browser does not support the audio element.
-          </audio>
-          <p><strong>Timestamp-Grounded Reasoning:</strong> [Model's reasoning with timestamps, e.g., "At [2.1s - 4.3s], the speaker says..."]</p>
-          <p><strong>Answer:</strong> [Final answer]</p>
-        </div>
+    <!-- Category Tabs -->
+    <div class="tabs is-centered is-medium demo-tabs" style="margin-bottom:1.5rem;">
+      <ul>
+        <li class="is-active" data-target="demo-1"><a>Event-Based<br>Knowledge Retrieval</a></li>
+        <li data-target="demo-2"><a>Conversational<br>Fact Retrieval</a></li>
+        <li data-target="demo-3"><a>Multi-Speaker<br>Role Mapping</a></li>
+        <li data-target="demo-4"><a>Dissonant Emotion<br>Interpretation</a></li>
+      </ul>
+    </div>
 
-        <div class="box">
-          <h4 class="title is-5">Example 2</h4>
-          <p><strong>Question:</strong> [Your question about the audio]</p>
-          <audio controls style="width:100%; margin: 10px 0;">
-            <source src="static/audios/example2.wav" type="audio/wav">
-            Your browser does not support the audio element.
-          </audio>
-          <p><strong>Timestamp-Grounded Reasoning:</strong> [Model's reasoning with timestamps]</p>
-          <p><strong>Answer:</strong> [Final answer]</p>
+    <!-- Demo 1: Event-Based Knowledge Retrieval -->
+    <div id="demo-1" class="demo-content is-active">
+      <div class="box">
+        <span class="tag is-info is-medium" style="margin-bottom:1.2rem;">Event-Based Knowledge Retrieval</span>
+        <p class="is-size-5 has-text-weight-semibold" style="margin-bottom:1rem;">Q: In which European city did the event described by the speaker take place?</p>
+        <div class="columns is-multiline" style="margin-bottom:1.5rem;">
+          <div class="column is-half"><div class="demo-choice">(a) &nbsp;Berlin</div></div>
+          <div class="column is-half"><div class="demo-choice">(b) &nbsp;Vienna</div></div>
+          <div class="column is-half"><div class="demo-choice">(c) &nbsp;Paris</div></div>
+          <div class="column is-half"><div class="demo-choice demo-choice-correct">(d) &nbsp;Sarajevo</div></div>
         </div>
-
-        <div class="box">
-          <h4 class="title is-5">Example 3</h4>
-          <p><strong>Question:</strong> [Your question about the audio]</p>
-          <audio controls style="width:100%; margin: 10px 0;">
-            <source src="static/audios/example3.wav" type="audio/wav">
-            Your browser does not support the audio element.
-          </audio>
-          <p><strong>Timestamp-Grounded Reasoning:</strong> [Model's reasoning with timestamps]</p>
-          <p><strong>Answer:</strong> [Final answer]</p>
+        <div class="columns">
+          <div class="column">
+            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-volume-up"></i></span> Full Audio <span style="font-weight:normal; color:#888; font-size:0.85rem;">(6.9s)</span></p>
+            <audio controls style="width:100%;">
+              <source src="static/test-mini-audios/f006b068-45b1-4bf6-9118-f03f5f67c7b9.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="column">
+            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-cut"></i></span> Grounded Segment <span class="tag is-warning is-light" style="margin-left:0.3rem;">0.00s – 1.42s</span></p>
+            <audio controls style="width:100%;">
+              <source src="static/cropped_audios/f006b068-45b1-4bf6-9118-f03f5f67c7b9_cropped.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+        <div class="demo-reasoning">
+          <p class="has-text-weight-semibold" style="margin-bottom:0.5rem;"><span class="icon"><i class="fas fa-brain"></i></span> Model Reasoning</p>
+          <p>From <strong class="demo-timestamp">[0.00s – 1.42s]</strong>, the speaker mentions <em>"the assassination of Archduke Franz Ferdinand."</em> This event is widely considered the immediate trigger for World War I, which took place in Sarajevo, Bosnia and Herzegovina. <strong>Final answer: (d) Sarajevo</strong></p>
+        </div>
+        <div style="margin-top:1rem; display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+          <span class="tag is-success is-medium"><span class="icon"><i class="fas fa-check"></i></span>&nbsp;Sarajevo</span>
+          <span class="tag is-light is-medium">IoU: 0.899</span>
         </div>
       </div>
     </div>
+
+    <!-- Demo 2: Conversational Fact Retrieval -->
+    <div id="demo-2" class="demo-content">
+      <div class="box">
+        <span class="tag is-primary is-medium" style="margin-bottom:1.2rem;">Conversational Fact Retrieval</span>
+        <p class="is-size-5 has-text-weight-semibold" style="margin-bottom:1rem;">Q: How long has it been since he last saw her?</p>
+        <div class="columns is-multiline" style="margin-bottom:1.5rem;">
+          <div class="column is-half"><div class="demo-choice">(a) &nbsp;Two years</div></div>
+          <div class="column is-half"><div class="demo-choice">(b) &nbsp;Three years</div></div>
+          <div class="column is-half"><div class="demo-choice demo-choice-correct">(c) &nbsp;Three and a half years</div></div>
+          <div class="column is-half"><div class="demo-choice">(d) &nbsp;Four years</div></div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-volume-up"></i></span> Full Audio <span style="font-weight:normal; color:#888; font-size:0.85rem;">(25.4s)</span></p>
+            <audio controls style="width:100%;">
+              <source src="static/test-mini-audios/18234671-43b7-4be3-b369-be5b4b522d27.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="column">
+            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-cut"></i></span> Grounded Segment <span class="tag is-warning is-light" style="margin-left:0.3rem;">13.48s – 15.48s</span></p>
+            <audio controls style="width:100%;">
+              <source src="static/cropped_audios/18234671-43b7-4be3-b369-be5b4b522d27_cropped.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+        <div class="demo-reasoning">
+          <p class="has-text-weight-semibold" style="margin-bottom:0.5rem;"><span class="icon"><i class="fas fa-brain"></i></span> Model Reasoning</p>
+          <p>From <strong class="demo-timestamp">[13.48s – 15.48s]</strong>, the speaker says, <em>"It's been three and a half years."</em> This directly indicates the duration since the last meeting. <strong>Final answer: (c) Three and a half years</strong></p>
+        </div>
+        <div style="margin-top:1rem; display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+          <span class="tag is-success is-medium"><span class="icon"><i class="fas fa-check"></i></span>&nbsp;Three and a half years</span>
+          <span class="tag is-light is-medium">IoU: 0.970</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo 3: Multi-Speaker Role Mapping -->
+    <div id="demo-3" class="demo-content">
+      <div class="box">
+        <span class="tag is-link is-medium" style="margin-bottom:1.2rem;">Multi-Speaker Role Mapping</span>
+        <p class="is-size-5 has-text-weight-semibold" style="margin-bottom:1rem;">Q: What is the link between the speakers in this conversation?</p>
+        <div class="columns is-multiline" style="margin-bottom:1.5rem;">
+          <div class="column is-half"><div class="demo-choice">(a) &nbsp;taxi driver – passenger</div></div>
+          <div class="column is-half"><div class="demo-choice">(b) &nbsp;personal shopper – client</div></div>
+          <div class="column is-half"><div class="demo-choice">(c) &nbsp;firefighter – chief</div></div>
+          <div class="column is-half"><div class="demo-choice demo-choice-correct">(d) &nbsp;equestrian coach – rider</div></div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-volume-up"></i></span> Full Audio <span style="font-weight:normal; color:#888; font-size:0.85rem;">(16.6s)</span></p>
+            <audio controls style="width:100%;">
+              <source src="static/test-mini-audios/b371a741-748e-4065-8826-f5bd07dc3979.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="column">
+            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-cut"></i></span> Grounded Segment <span class="tag is-warning is-light" style="margin-left:0.3rem;">0.00s – 4.30s</span></p>
+            <audio controls style="width:100%;">
+              <source src="static/cropped_audios/b371a741-748e-4065-8826-f5bd07dc3979_cropped.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+        <div class="demo-reasoning">
+          <p class="has-text-weight-semibold" style="margin-bottom:0.5rem;"><span class="icon"><i class="fas fa-brain"></i></span> Model Reasoning</p>
+          <p>From <strong class="demo-timestamp">[0.00s – 4.30s]</strong>, the speaker mentions <em>"focusing on improving your jumping technique"</em> and asks about practice exercises. This clearly indicates a coaching context in an equestrian setting. <strong>Final answer: (d) equestrian coach – rider</strong></p>
+        </div>
+        <div style="margin-top:1rem; display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+          <span class="tag is-success is-medium"><span class="icon"><i class="fas fa-check"></i></span>&nbsp;equestrian coach – rider</span>
+          <span class="tag is-light is-medium">IoU: 0.986</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo 4: Dissonant Emotion Interpretation -->
+    <div id="demo-4" class="demo-content">
+      <div class="box">
+        <span class="tag is-danger is-medium" style="margin-bottom:1.2rem;">Dissonant Emotion Interpretation</span>
+        <p class="is-size-5 has-text-weight-semibold" style="margin-bottom:1rem;">Q: Why is the final statement considered sarcastic in this context?</p>
+        <div class="columns is-multiline" style="margin-bottom:1.5rem;">
+          <div class="column is-half"><div class="demo-choice">(a) &nbsp;Scott never tells sarcasm stories.</div></div>
+          <div class="column is-half"><div class="demo-choice demo-choice-correct">(b) &nbsp;Feigning interest and enthusiasm.</div></div>
+          <div class="column is-half"><div class="demo-choice">(c) &nbsp;Too busy to hear the story.</div></div>
+          <div class="column is-half"><div class="demo-choice">(d) &nbsp;Genuine interest in Scott's story.</div></div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-volume-up"></i></span> Full Audio <span style="font-weight:normal; color:#888; font-size:0.85rem;">(12.1s)</span></p>
+            <audio controls style="width:100%;">
+              <source src="static/test-mini-audios/516653d5-79d7-404e-a208-62367fdc59b7.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="column">
+            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-cut"></i></span> Grounded Segment <span class="tag is-warning is-light" style="margin-left:0.3rem;">6.20s – 10.00s</span></p>
+            <audio controls style="width:100%;">
+              <source src="static/cropped_audios/516653d5-79d7-404e-a208-62367fdc59b7_cropped.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+        <div class="demo-reasoning">
+          <p class="has-text-weight-semibold" style="margin-bottom:0.5rem;"><span class="icon"><i class="fas fa-brain"></i></span> Model Reasoning</p>
+          <p>From <strong class="demo-timestamp">[6.20s – 10.00s]</strong>, the speaker says, <em>"Well Scott I'm sure we're all really really looking forward to hearing your story."</em> This statement contrasts with the speaker's actual feelings, expressing feigned enthusiasm — a hallmark of sarcasm. <strong>Final answer: (b) Feigning interest and enthusiasm.</strong></p>
+        </div>
+        <div style="margin-top:1rem; display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+          <span class="tag is-success is-medium"><span class="icon"><i class="fas fa-check"></i></span>&nbsp;Feigning interest and enthusiasm.</span>
+          <span class="tag is-light is-medium">IoU: 0.796</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 <!-- End audio demos -->
