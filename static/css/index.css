@@ -1,3 +1,51 @@
+/* Audio Demo Tab Switching */
+.demo-content {
+  display: none;
+}
+.demo-content.is-active {
+  display: block;
+}
+
+/* Demo Tabs: button-style */
+.demo-tabs {
+  border-bottom: none !important;
+}
+.demo-tabs ul {
+  border-bottom: none !important;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.demo-tabs li {
+  border: none !important;
+}
+.demo-tabs li a {
+  border: 4px solid #c5cae9 !important;
+  border-radius: 10px !important;
+  padding: 0.6rem 1.1rem !important;
+  background: #ffffff;
+  color: #485fc7 !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
+  box-shadow: 0 2px 4px rgba(72,95,199,0.08);
+}
+.demo-tabs li a:hover {
+  background: #eef0fb !important;
+  border-color: #485fc7 !important;
+  box-shadow: 0 4px 10px rgba(72,95,199,0.18);
+  transform: translateY(-1px);
+}
+.demo-tabs li.is-active a {
+  background: #485fc7 !important;
+  border-color: #485fc7 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(72,95,199,0.35);
+  transform: translateY(-1px);
+}
+
 /* Modern CSS Variables for consistent theming */
 :root {
   --primary-color: #2563eb;
@@ -696,6 +744,43 @@ code {
   }
 }
 
+/* ── Audio Demo: Answer Choices ── */
+.demo-choice {
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.demo-choice-correct {
+  background: #effaf5;
+  border-color: #48c78e;
+  color: #257953;
+  font-weight: 600;
+}
+
+.demo-reasoning {
+  background: #f8f9fa;
+  border-left: 4px solid #3273dc;
+  border-radius: 4px;
+  padding: 1rem 1.2rem;
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.demo-timestamp {
+  color: #3273dc;
+  background: #e8f0fe;
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+
+
 /* Tablet Responsive */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .hero-body {
@@ -749,75 +834,5 @@ a:focus {
   }
 }
 
-/* ── Audio Demo Section ── */
-.demo-content {
-  display: none;
-}
-
-.demo-content.is-active {
-  display: block;
-}
-
-.demo-tabs li a {
-  line-height: 1.3;
-  padding: 0.6rem 1rem;
-  text-align: center;
-}
-
-.demo-choice {
-  background: #f5f5f5;
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  padding: 0.6rem 1rem;
-  font-size: 0.95rem;
-  text-align: left;
-}
-
-.demo-choice-correct {
-  background: #effaf5;
-  border-color: #48c78e;
-  color: #257953;
-  font-weight: 600;
-}
-
-.demo-reasoning {
-  background: #f8f9fa;
-  border-left: 4px solid #3273dc;
-  border-radius: 4px;
-  padding: 1rem 1.2rem;
-  margin-top: 1.2rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.demo-timestamp {
-  color: #3273dc;
-  background: #e8f0fe;
-  padding: 0.1em 0.4em;
-  border-radius: 4px;
-  font-family: monospace;
-}
 
 
-
-
-.demo-example-divider {
-  text-align: center;
-  font-weight: 600;
-  color: #888;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin: 1.5rem 0 1rem;
-  position: relative;
-}
-.demo-example-divider::before,
-.demo-example-divider::after {
-  content: "";
-  display: inline-block;
-  width: 30%;
-  height: 1px;
-  background: #ddd;
-  vertical-align: middle;
-  margin: 0 0.75rem;
-}
