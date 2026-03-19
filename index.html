@@ -143,84 +143,84 @@ Additionally, grounding amplifies desirable reasoning behaviors, such as region 
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Audio Demos</h2>
     <p class="has-text-centered" style="color:#666; margin-bottom:2rem;">
-      One example per reasoning sub-category. The model identifies the relevant timestamp before answering.
+      The model identifies the relevant timestamp before answering.
     </p>
 
     <!-- Category Tabs -->
     <div class="tabs is-centered is-medium demo-tabs" style="margin-bottom:1.5rem;">
       <ul>
-        <li class="is-active" data-target="demo-1"><a>Event-Based<br>Knowledge Retrieval</a></li>
+        <li class="is-active" data-target="demo-1"><a>Multi-Speaker<br>Role Mapping</a></li>
         <li data-target="demo-2"><a>Conversational<br>Fact Retrieval</a></li>
-        <li data-target="demo-3"><a>Multi-Speaker<br>Role Mapping</a></li>
+        <li data-target="demo-3"><a>Event-Based<br>Knowledge Retrieval</a></li>
         <li data-target="demo-4"><a>Dissonant Emotion<br>Interpretation</a></li>
       </ul>
     </div>
 
-    <!-- Demo 1: Event-Based Knowledge Retrieval -->
+    <!-- Demo 1: Multi-Speaker Role Mapping -->
     <div id="demo-1" class="demo-content is-active">
-      <div class="box" style="border-top: 4px solid #3e8ed0; background: #f5faff;">
-        <span class="tag is-info is-medium" style="margin-bottom:1.2rem;">Event-Based Knowledge Retrieval</span>
-        <p class="is-size-5 has-text-weight-semibold" style="margin-bottom:1rem;">Q: In which European city did the event described by the speaker take place?</p>
+      <div class="box" style="border-top: 4px solid #485fc7; background: #f5f6ff;">
+        <span class="tag is-link is-medium" style="margin-bottom:1.2rem;">Multi-Speaker Role Mapping</span>
+        <p class="is-size-5 has-text-weight-semibold" style="margin-bottom:1rem;">Q: What is the link between the speakers in this conversation?</p>
         <div class="columns is-multiline" style="margin-bottom:1.5rem;">
-          <div class="column is-half"><div class="demo-choice">(a) &nbsp;Berlin</div></div>
-          <div class="column is-half"><div class="demo-choice">(b) &nbsp;Vienna</div></div>
-          <div class="column is-half"><div class="demo-choice">(c) &nbsp;Paris</div></div>
-          <div class="column is-half"><div class="demo-choice demo-choice-correct">(d) &nbsp;Sarajevo</div></div>
+          <div class="column is-half"><div class="demo-choice">(a) &nbsp;taxi driver – passenger</div></div>
+          <div class="column is-half"><div class="demo-choice">(b) &nbsp;personal shopper – client</div></div>
+          <div class="column is-half"><div class="demo-choice">(c) &nbsp;firefighter – chief</div></div>
+          <div class="column is-half"><div class="demo-choice demo-choice-correct">(d) &nbsp;equestrian coach – rider</div></div>
         </div>
         <div class="columns">
           <div class="column">
-            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-volume-up"></i></span> Full Audio <span style="font-weight:normal; color:#888; font-size:0.85rem;">(6.9s)</span></p>
+            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-volume-up"></i></span> Full Audio <span style="font-weight:normal; color:#888; font-size:0.85rem;">(16.6s)</span></p>
             <audio controls style="width:100%;">
-              <source src="static/test-mini-audios/f006b068-45b1-4bf6-9118-f03f5f67c7b9.wav" type="audio/wav">
+              <source src="static/test-mini-audios/b371a741-748e-4065-8826-f5bd07dc3979.wav" type="audio/wav">
             </audio>
           </div>
           <div class="column">
-            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-cut"></i></span> Grounded Segment <span class="tag is-warning is-light" style="margin-left:0.3rem;">0.00s – 1.42s</span></p>
+            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-cut"></i></span> Grounded Segment <span class="tag is-warning is-light" style="margin-left:0.3rem;">0.00s – 4.30s</span></p>
             <audio controls style="width:100%;">
-              <source src="static/cropped_audios/f006b068-45b1-4bf6-9118-f03f5f67c7b9_cropped.wav" type="audio/wav">
+              <source src="static/cropped_audios/b371a741-748e-4065-8826-f5bd07dc3979_cropped.wav" type="audio/wav">
             </audio>
           </div>
         </div>
         <div class="demo-reasoning">
           <p class="has-text-weight-semibold" style="margin-bottom:0.5rem;"><span class="icon"><i class="fas fa-brain"></i></span> Model Reasoning</p>
-          <p>From <strong class="demo-timestamp">[0.00s – 1.42s]</strong>, the speaker mentions <em>"the assassination of Archduke."</em> This event is widely considered the immediate trigger for World War I, which took place in Sarajevo, Bosnia and Herzegovina. <strong>Final answer: (d) Sarajevo</strong></p>
+          <p>From <strong class="demo-timestamp">[0.00s – 4.30s]</strong>, the speaker mentions <em>"focusing on improving your jumping technique"</em> and asks about practice exercises. This clearly indicates a coaching context in an equestrian setting. <strong>Final answer: (d) equestrian coach – rider</strong></p>
         </div>
         <div style="margin-top:1rem; display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
-          <span class="tag is-success is-medium"><span class="icon"><i class="fas fa-check"></i></span>&nbsp;Sarajevo</span>
-          <span class="tag is-light is-medium">IoU: 0.899</span>
+          <span class="tag is-success is-medium"><span class="icon"><i class="fas fa-check"></i></span>&nbsp;equestrian coach – rider</span>
+          <span class="tag is-light is-medium">IoU: 0.986</span>
         </div>
       </div>
       <p class="demo-example-divider">Example 2</p>
-      <div class="box" style="border-top: 4px solid #3e8ed0; background: #f5faff;">
-        <span class="tag is-info is-medium" style="margin-bottom:1.2rem;">Event-Based Knowledge Retrieval</span>
-        <p class="is-size-5 has-text-weight-semibold" style="margin-bottom:1rem;">Q: In which city did the event mentioned by the speaker take place?</p>
+      <div class="box" style="border-top: 4px solid #485fc7; background: #f5f6ff;">
+        <span class="tag is-link is-medium" style="margin-bottom:1.2rem;">Multi-Speaker Role Mapping</span>
+        <p class="is-size-5 has-text-weight-semibold" style="margin-bottom:1rem;">Q: What's the relationship between the two people talking?</p>
         <div class="columns is-multiline" style="margin-bottom:1.5rem;">
-          <div class="column is-half"><div class="demo-choice demo-choice-correct">(a) &nbsp;Dallas, Texas</div></div>
-          <div class="column is-half"><div class="demo-choice">(b) &nbsp;Los Angeles, California</div></div>
-          <div class="column is-half"><div class="demo-choice">(c) &nbsp;Chicago, Illinois</div></div>
-          <div class="column is-half"><div class="demo-choice">(d) &nbsp;New York City, New York</div></div>
+          <div class="column is-half"><div class="demo-choice demo-choice-correct">(a) &nbsp;plumber – homeowner</div></div>
+          <div class="column is-half"><div class="demo-choice">(b) &nbsp;politician – advisor</div></div>
+          <div class="column is-half"><div class="demo-choice">(c) &nbsp;barber – customer</div></div>
+          <div class="column is-half"><div class="demo-choice">(d) &nbsp;cobbler – customer</div></div>
         </div>
         <div class="columns">
           <div class="column">
-            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-volume-up"></i></span> Full Audio <span style="font-weight:normal; color:#888; font-size:0.85rem;">(3.5s)</span></p>
+            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-volume-up"></i></span> Full Audio <span style="font-weight:normal; color:#888; font-size:0.85rem;">(9.6s)</span></p>
             <audio controls style="width:100%;">
-              <source src="static/test-mini-audios/daa1f53f-4314-425b-b3ed-4780624f5e06.wav" type="audio/wav">
+              <source src="static/test-mini-audios/d77e9fec-1516-4252-a8a2-65e5df8b8e47.wav" type="audio/wav">
             </audio>
           </div>
           <div class="column">
-            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-cut"></i></span> Grounded Segment <span class="tag is-warning is-light" style="margin-left:0.3rem;">0.00s – 2.92s</span></p>
+            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-cut"></i></span> Grounded Segment <span class="tag is-warning is-light" style="margin-left:0.3rem;">0.00s – 1.80s</span></p>
             <audio controls style="width:100%;">
-              <source src="static/cropped_audios/daa1f53f-4314-425b-b3ed-4780624f5e06_cropped.wav" type="audio/wav">
+              <source src="static/cropped_audios/d77e9fec-1516-4252-a8a2-65e5df8b8e47_cropped.wav" type="audio/wav">
             </audio>
           </div>
         </div>
         <div class="demo-reasoning">
           <p class="has-text-weight-semibold" style="margin-bottom:0.5rem;"><span class="icon"><i class="fas fa-brain"></i></span> Model Reasoning</p>
-          <p>From <strong class="demo-timestamp">[0.00s – 2.92s]</strong>, the speaker mentions <em>"the assassination of John F. Kennedy."</em> This refers to the assassination of President Kennedy on November 22, 1963, which occurred in Dallas, Texas. <strong>Final answer: (a) Dallas, Texas</strong></p>
+          <p>From <strong class="demo-timestamp">[0.00s – 1.80s]</strong>, the speaker says, <em>"Hi there, I'm the plumber you called."</em> This opening line directly identifies the professional relationship between the two speakers. <strong>Final answer: (a) plumber – homeowner</strong></p>
         </div>
         <div style="margin-top:1rem; display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
-          <span class="tag is-success is-medium"><span class="icon"><i class="fas fa-check"></i></span>&nbsp;Dallas, Texas</span>
-          <span class="tag is-light is-medium">IoU: 0.894</span>
+          <span class="tag is-success is-medium"><span class="icon"><i class="fas fa-check"></i></span>&nbsp;plumber – homeowner</span>
+          <span class="tag is-light is-medium">IoU: 0.957</span>
         </div>
       </div>
     </div>
@@ -294,71 +294,71 @@ Additionally, grounding amplifies desirable reasoning behaviors, such as region 
       </div>
     </div>
 
-    <!-- Demo 3: Multi-Speaker Role Mapping -->
+    <!-- Demo 3: Event-Based Knowledge Retrieval -->
     <div id="demo-3" class="demo-content">
-      <div class="box" style="border-top: 4px solid #485fc7; background: #f5f6ff;">
-        <span class="tag is-link is-medium" style="margin-bottom:1.2rem;">Multi-Speaker Role Mapping</span>
-        <p class="is-size-5 has-text-weight-semibold" style="margin-bottom:1rem;">Q: What is the link between the speakers in this conversation?</p>
+      <div class="box" style="border-top: 4px solid #3e8ed0; background: #f5faff;">
+        <span class="tag is-info is-medium" style="margin-bottom:1.2rem;">Event-Based Knowledge Retrieval</span>
+        <p class="is-size-5 has-text-weight-semibold" style="margin-bottom:1rem;">Q: In which European city did the event described by the speaker take place?</p>
         <div class="columns is-multiline" style="margin-bottom:1.5rem;">
-          <div class="column is-half"><div class="demo-choice">(a) &nbsp;taxi driver – passenger</div></div>
-          <div class="column is-half"><div class="demo-choice">(b) &nbsp;personal shopper – client</div></div>
-          <div class="column is-half"><div class="demo-choice">(c) &nbsp;firefighter – chief</div></div>
-          <div class="column is-half"><div class="demo-choice demo-choice-correct">(d) &nbsp;equestrian coach – rider</div></div>
+          <div class="column is-half"><div class="demo-choice">(a) &nbsp;Berlin</div></div>
+          <div class="column is-half"><div class="demo-choice">(b) &nbsp;Vienna</div></div>
+          <div class="column is-half"><div class="demo-choice">(c) &nbsp;Paris</div></div>
+          <div class="column is-half"><div class="demo-choice demo-choice-correct">(d) &nbsp;Sarajevo</div></div>
         </div>
         <div class="columns">
           <div class="column">
-            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-volume-up"></i></span> Full Audio <span style="font-weight:normal; color:#888; font-size:0.85rem;">(16.6s)</span></p>
+            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-volume-up"></i></span> Full Audio <span style="font-weight:normal; color:#888; font-size:0.85rem;">(6.9s)</span></p>
             <audio controls style="width:100%;">
-              <source src="static/test-mini-audios/b371a741-748e-4065-8826-f5bd07dc3979.wav" type="audio/wav">
+              <source src="static/test-mini-audios/f006b068-45b1-4bf6-9118-f03f5f67c7b9.wav" type="audio/wav">
             </audio>
           </div>
           <div class="column">
-            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-cut"></i></span> Grounded Segment <span class="tag is-warning is-light" style="margin-left:0.3rem;">0.00s – 4.30s</span></p>
+            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-cut"></i></span> Grounded Segment <span class="tag is-warning is-light" style="margin-left:0.3rem;">0.00s – 1.42s</span></p>
             <audio controls style="width:100%;">
-              <source src="static/cropped_audios/b371a741-748e-4065-8826-f5bd07dc3979_cropped.wav" type="audio/wav">
+              <source src="static/cropped_audios/f006b068-45b1-4bf6-9118-f03f5f67c7b9_cropped.wav" type="audio/wav">
             </audio>
           </div>
         </div>
         <div class="demo-reasoning">
           <p class="has-text-weight-semibold" style="margin-bottom:0.5rem;"><span class="icon"><i class="fas fa-brain"></i></span> Model Reasoning</p>
-          <p>From <strong class="demo-timestamp">[0.00s – 4.30s]</strong>, the speaker mentions <em>"focusing on improving your jumping technique"</em> and asks about practice exercises. This clearly indicates a coaching context in an equestrian setting. <strong>Final answer: (d) equestrian coach – rider</strong></p>
+          <p>From <strong class="demo-timestamp">[0.00s – 1.42s]</strong>, the speaker mentions <em>"the assassination of Archduke."</em> This event is widely considered the immediate trigger for World War I, which took place in Sarajevo, Bosnia and Herzegovina. <strong>Final answer: (d) Sarajevo</strong></p>
         </div>
         <div style="margin-top:1rem; display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
-          <span class="tag is-success is-medium"><span class="icon"><i class="fas fa-check"></i></span>&nbsp;equestrian coach – rider</span>
-          <span class="tag is-light is-medium">IoU: 0.986</span>
+          <span class="tag is-success is-medium"><span class="icon"><i class="fas fa-check"></i></span>&nbsp;Sarajevo</span>
+          <span class="tag is-light is-medium">IoU: 0.899</span>
         </div>
       </div>
       <p class="demo-example-divider">Example 2</p>
-      <div class="box" style="border-top: 4px solid #485fc7; background: #f5f6ff;">
-        <span class="tag is-link is-medium" style="margin-bottom:1.2rem;">Multi-Speaker Role Mapping</span>
-        <p class="is-size-5 has-text-weight-semibold" style="margin-bottom:1rem;">Q: What's the relationship between the two people talking?</p>
+      <div class="box" style="border-top: 4px solid #3e8ed0; background: #f5faff;">
+        <span class="tag is-info is-medium" style="margin-bottom:1.2rem;">Event-Based Knowledge Retrieval</span>
+        <p class="is-size-5 has-text-weight-semibold" style="margin-bottom:1rem;">Q: In which city did the event mentioned by the speaker take place?</p>
         <div class="columns is-multiline" style="margin-bottom:1.5rem;">
-          <div class="column is-half"><div class="demo-choice demo-choice-correct">(a) &nbsp;plumber – homeowner</div></div>
-          <div class="column is-half"><div class="demo-choice">(b) &nbsp;politician – advisor</div></div>
-          <div class="column is-half"><div class="demo-choice">(c) &nbsp;barber – customer</div></div>
-          <div class="column is-half"><div class="demo-choice">(d) &nbsp;cobbler – customer</div></div>
+          <div class="column is-half"><div class="demo-choice demo-choice-correct">(a) &nbsp;Dallas, Texas</div></div>
+          <div class="column is-half"><div class="demo-choice">(b) &nbsp;Los Angeles, California</div></div>
+          <div class="column is-half"><div class="demo-choice">(c) &nbsp;Chicago, Illinois</div></div>
+          <div class="column is-half"><div class="demo-choice">(d) &nbsp;New York City, New York</div></div>
         </div>
         <div class="columns">
           <div class="column">
-            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-volume-up"></i></span> Full Audio <span style="font-weight:normal; color:#888; font-size:0.85rem;">(9.6s)</span></p>
+            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-volume-up"></i></span> Full Audio <span style="font-weight:normal; color:#888; font-size:0.85rem;">(3.5s)</span></p>
             <audio controls style="width:100%;">
-              <source src="static/test-mini-audios/d77e9fec-1516-4252-a8a2-65e5df8b8e47.wav" type="audio/wav">
+              <source src="static/test-mini-audios/daa1f53f-4314-425b-b3ed-4780624f5e06.wav" type="audio/wav">
             </audio>
           </div>
           <div class="column">
-            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-cut"></i></span> Grounded Segment <span class="tag is-warning is-light" style="margin-left:0.3rem;">0.00s – 1.80s</span></p>
+            <p class="has-text-weight-semibold" style="margin-bottom:0.4rem;"><span class="icon"><i class="fas fa-cut"></i></span> Grounded Segment <span class="tag is-warning is-light" style="margin-left:0.3rem;">0.00s – 2.92s</span></p>
             <audio controls style="width:100%;">
-              <source src="static/cropped_audios/d77e9fec-1516-4252-a8a2-65e5df8b8e47_cropped.wav" type="audio/wav">
+              <source src="static/cropped_audios/daa1f53f-4314-425b-b3ed-4780624f5e06_cropped.wav" type="audio/wav">
             </audio>
           </div>
         </div>
         <div class="demo-reasoning">
           <p class="has-text-weight-semibold" style="margin-bottom:0.5rem;"><span class="icon"><i class="fas fa-brain"></i></span> Model Reasoning</p>
-          <p>From <strong class="demo-timestamp">[0.00s – 1.80s]</strong>, the speaker says, <em>"Hi there, I'm the plumber you called."</em> This opening line directly identifies the professional relationship between the two speakers. <strong>Final answer: (a) plumber – homeowner</strong></p>
+          <p>From <strong class="demo-timestamp">[0.00s – 2.92s]</strong>, the speaker mentions <em>"the assassination of John F. Kennedy."</em> This refers to the assassination of President Kennedy on November 22, 1963, which occurred in Dallas, Texas. <strong>Final answer: (a) Dallas, Texas</strong></p>
         </div>
         <div style="margin-top:1rem; display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
-          <span class="tag is-success is-medium"><span class="icon"><i class="fas fa-check"></i></span>&nbsp;plumber – homeowner</span>
-          <span class="tag is-light is-medium">IoU: 0.957</span>
+          <span class="tag is-success is-medium"><span class="icon"><i class="fas fa-check"></i></span>&nbsp;Dallas, Texas</span>
+          <span class="tag is-light is-medium">IoU: 0.894</span>
         </div>
       </div>
     </div>
