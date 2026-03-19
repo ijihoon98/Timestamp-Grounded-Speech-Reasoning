@@ -104,7 +104,7 @@
         "difficulty": "hard",
         "split": "test-mini",
         "sub-category": "Event-Based Knowledge Retrieval",
-        "model_prediction": "To determine the best description, let's analyze the audio content and the given timestamps:\nFrom 0.00s to 1.42s, the speaker mentions \"the assassination of Archduke Franz Ferdinand.\" This event is historically significant as it is widely considered the immediate trigger for World War I. The assassination took place in Sarajevo, Bosnia and Herzegovina, which was then part of the Austro-Hungarian Empire.\nThe audio does not provide specific details about the location, but the context of the assassination of Archduke Franz Ferdinand is well-known to be in Sarajevo.\nFinal answer: (d) Sarajevo",
+        "model_prediction": "To determine the best description, let's analyze the audio content and the given timestamps:\nFrom 0.00s to 1.42s, the speaker mentions \"the assassination of Archduke\" This event is historically significant as it is widely considered the immediate trigger for World War I. The assassination took place in Sarajevo, Bosnia and Herzegovina, which was then part of the Austro-Hungarian Empire.\nThe audio does not provide specific details about the location, but the context of the assassination of Archduke Franz Ferdinand is well-known to be in Sarajevo.\nFinal answer: (d) Sarajevo",
         "model_output": "Sarajevo",
         "avg_iou": 0.8987,
         "gt_transcription": "\"the assassination of Archduke.\" (0.00-1.58 s), \"Franz Friedenand set off a chain of events that led to World War.\" (2.86-6.74 s)"
