@@ -91,7 +91,7 @@
     <div class="hero-body">
       <img src="static/images/fig1_teaser.png" alt="Overview of Timestamp-Grounded Speech Reasoning" style="width:100%;">
       <h2 class="subtitle has-text-centered">
-        Our framework grounds speech reasoning in temporal segments, enabling models to "listen first" before answering.
+        Our framework grounds speech reasoning in temporal segments,<br>enabling models to "listen first" before answering.
       </h2>
     </div>
   </div>
@@ -147,13 +147,23 @@ Additionally, grounding amplifies desirable reasoning behaviors, such as region 
     </p>
 
     <!-- Category Tabs -->
-    <div class="tabs is-centered is-medium demo-tabs" style="margin-bottom:1.5rem;">
-      <ul>
-        <li class="is-active" data-target="demo-1"><a>Event-Based<br>Knowledge Retrieval</a></li>
-        <li data-target="demo-2"><a>Conversational<br>Fact Retrieval</a></li>
-        <li data-target="demo-3"><a>Multi-Speaker<br>Role Mapping</a></li>
-        <li data-target="demo-4"><a>Dissonant Emotion<br>Interpretation</a></li>
-      </ul>
+    <div class="demo-tab-group">
+      <button class="demo-tab-btn is-active" data-target="demo-1" style="--tab-color: #3e8ed0;">
+        <span class="demo-tab-icon"><i class="fas fa-search"></i></span>
+        <span class="demo-tab-label">Event-Based<br>Knowledge Retrieval</span>
+      </button>
+      <button class="demo-tab-btn" data-target="demo-2" style="--tab-color: #00d1b2;">
+        <span class="demo-tab-icon"><i class="fas fa-comments"></i></span>
+        <span class="demo-tab-label">Conversational<br>Fact Retrieval</span>
+      </button>
+      <button class="demo-tab-btn" data-target="demo-3" style="--tab-color: #485fc7;">
+        <span class="demo-tab-icon"><i class="fas fa-users"></i></span>
+        <span class="demo-tab-label">Multi-Speaker<br>Role Mapping</span>
+      </button>
+      <button class="demo-tab-btn" data-target="demo-4" style="--tab-color: #f14668;">
+        <span class="demo-tab-icon"><i class="fas fa-theater-masks"></i></span>
+        <span class="demo-tab-label">Dissonant Emotion<br>Interpretation</span>
+      </button>
     </div>
 
     <!-- Demo 1: Event-Based Knowledge Retrieval -->
@@ -317,50 +327,13 @@ Additionally, grounding amplifies desirable reasoning behaviors, such as region 
             We conduct a semantic-based attention analysis and find that baseline LALMs allocate only a small fraction of attention to audio tokens.
             System tokens dominate attention allocation, receiving <strong>15&times; more attention</strong> than audio tokens on a per-token basis, even when producing correct answers.
           </p>
-          <figure style="margin: 1.2rem 0 1.8rem;">
-            <img src="static/images/block_attention_distribution_per_token.png" alt="Attention distribution per token type" style="width:100%; border-radius:6px;">
-            <figcaption style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.5rem;">Attention distribution across token types. System tokens dominate, while audio tokens receive disproportionately little attention in the baseline model.</figcaption>
-          </figure>
           <h4 class="title is-5" style="text-align:left;">2. Grounding Is Listening</h4>
           <p>
             Our timestamp-aligned model allocates <strong>significantly higher attention to audio tokens</strong> across transformer layers compared to the vanilla model,
             with the most pronounced increase observed during the reasoning stage.
           </p>
-          <figure style="margin: 1.2rem 0 1.8rem;">
-            <img src="static/images/audio_lineplot_timestamp_tokens.png" alt="Audio token attention across transformer layers" style="width:100%; border-radius:6px;">
-            <figcaption style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.5rem;">Layer-wise audio token attention during timestamp generation. The STA-trained model attends more strongly to audio tokens across all layers compared to the vanilla baseline.</figcaption>
-          </figure>
           <h4 class="title is-5" style="text-align:left;">3. Grounding Improves Reasoning Quality</h4>
           <p>Timestamp grounding reshapes reasoning behavior: the model explores more distinct audio regions, achieves higher audiology verification scores, and produces more consistent reasoning chains.</p>
-          <div class="table-container">
-            <table class="table is-bordered is-striped is-hoverable is-fullwidth" style="text-align:center;">
-              <thead>
-                <tr>
-                  <th style="text-align:left;">Model</th>
-                  <th>Regions Explored</th>
-                  <th>Audiology Verify</th>
-                  <th>Consistency</th>
-                  <th>Acc. (%)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="text-align:left;">Zero-Shot (Standard CoT)</td>
-                  <td>1.3</td>
-                  <td>0.27</td>
-                  <td>0.72</td>
-                  <td>69.4</td>
-                </tr>
-                <tr>
-                  <td style="text-align:left;"><strong>Ours</strong></td>
-                  <td><strong>1.8</strong></td>
-                  <td><strong>0.56</strong></td>
-                  <td><strong>0.83</strong></td>
-                  <td><strong>74.5</strong></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
       </div>
     </div>
