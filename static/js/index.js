@@ -119,21 +119,18 @@ function setupVideoCarouselAutoplay() {
     });
 }
 
-// Demo tab switching
-document.addEventListener('DOMContentLoaded', function() {
-    const tabs = document.querySelectorAll('.demo-tabs li');
-    tabs.forEach(function(tab) {
-        tab.addEventListener('click', function() {
-            tabs.forEach(function(t) { t.classList.remove('is-active'); });
-            tab.classList.add('is-active');
-            var target = tab.getAttribute('data-target');
-            document.querySelectorAll('.demo-content').forEach(function(c) { c.classList.remove('is-active'); });
-            document.getElementById(target).classList.add('is-active');
-        });
-    });
-});
-
 $(document).ready(function() {
+    // Demo tab switching
+    $('.demo-tabs li').on('click', function(e) {
+        e.preventDefault();
+        $('.demo-tabs li').removeClass('is-active');
+        $(this).addClass('is-active');
+        var target = $(this).data('target');
+        $('.demo-content').removeClass('is-active');
+        $('#' + target).addClass('is-active');
+    });
+
+
     // Check for click events on the navbar burger icon
 
     var options = {
